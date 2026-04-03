@@ -36,6 +36,67 @@ A VS Code extension for reviewing git diffs between branches and commits.
 - A git repository on your local machine
 - Git installed and available in your PATH
 
+## Installation from Source
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm (comes with Node.js)
+- VS Code
+
+### Build and Package
+
+1. **Clone or download the repository**
+   ```bash
+   git clone <repository-url>
+   cd GitReviewVSCodeExtension
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   cd webview-ui && npm install && cd ..
+   ```
+
+3. **Build the project**
+   ```bash
+   npm run build
+   ```
+
+4. **Create a .vsix package**
+   ```bash
+   npx vsce package
+   ```
+   This will create a `gitreview-0.0.1.vsix` file in the project directory.
+
+5. **Install the extension locally**
+   - Open VS Code
+   - Go to Extensions (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+   - Click the **...** menu at the top of the Extensions panel
+   - Select **Install from VSIX...**
+   - Navigate to and select the `.vsix` file you just created
+
+Alternatively, you can use the command line:
+```bash
+code --install-extension gitreview-0.0.1.vsix
+```
+
+### Development Mode
+
+For development with hot reload:
+
+1. **Terminal 1 - Watch UI changes:**
+   ```bash
+   cd webview-ui && npm run dev
+   ```
+
+2. **Terminal 2 - Watch extension changes:**
+   ```bash
+   npm run watch
+   ```
+
+3. **VS Code - Press `F5`** to start debugging the extension in a new VS Code window
+
 ## Known Issues
 
 None at this time.
