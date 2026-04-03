@@ -1,0 +1,32 @@
+{
+  "name": "gitreview",
+  "displayName": "GitReview",
+  "version": "0.0.1",
+  "publisher": "andrea-benedetto",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/gitreview"
+  },
+  "engines": { "vscode": "^1.80.0" },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "myExtension.open",
+      "title": "GitReview"
+    }]
+  },
+  "scripts": {
+    "build:ext": "tsc -p tsconfig.json",
+    "build:ui": "cd webview-ui && npm run build",
+    "build": "npm run build:ui && npm run build:ext",
+    "watch": "tsc -watch -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}

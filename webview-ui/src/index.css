@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ── Diff2html dark overrides ── */
+.dark .d2h-file-wrapper {
+  border-color: #30363d !important;
+  background: #161b22 !important;
+}
+.dark .d2h-file-header { display: none !important; }
+.dark .d2h-diff-table,
+.dark .d2h-code-line,
+.dark .d2h-code-side-line { background: #161b22 !important; color: #e6edf3 !important; }
+.dark .d2h-ins, .dark .d2h-ins td { background: #0d1f0f !important; }
+.dark .d2h-ins .d2h-code-line-ctn { background: rgba(4, 250, 61, 0.15) !important; }
+.dark .d2h-del, .dark .d2h-del td { background: #1f0d0d !important; }
+.dark .d2h-del .d2h-code-line-ctn { background: rgba(235, 31, 20, 0.2) !important; }
+.dark .d2h-ins .d2h-code-line-ctn ins { background: rgba(63,185,80,0.28) !important; text-decoration: none !important; border-radius: 2px !important; }
+.dark .d2h-del .d2h-code-line-ctn del { background: rgba(248,81,73,0.28) !important; text-decoration: none !important; border-radius: 2px !important; }
+.dark .d2h-code-linenumber { background: #161b22 !important; color: #484f58 !important; border-color: #21262d !important; }
+.dark .d2h-ins .d2h-code-linenumber { background: #0d1f0f !important; color: rgba(63,185,80,0.4) !important; }
+.dark .d2h-del .d2h-code-linenumber { background: #1f0d0d !important; color: rgba(248,81,73,0.4) !important; }
+.dark .d2h-info { background: #1c2128 !important; color: #7d8590 !important; border-color: #21262d !important; }
+.dark .d2h-tag { display: none !important; }
+
+/* ── Diff2html light overrides ── */
+.light .d2h-file-wrapper {
+  border-color: #d0d7de !important;
+  background: #ffffff !important;
+}
+.light .d2h-file-header { display: none !important; }
+.light .d2h-diff-table,
+.light .d2h-code-line,
+.light .d2h-code-side-line { background: #fff !important; color: #1f2328 !important; }
+.light .d2h-ins, .light .d2h-ins td { background: #e6ffec !important; }
+.light .d2h-ins .d2h-code-line-ctn { background: rgba(204, 255, 216, 0.85) !important; }
+.light .d2h-del, .light .d2h-del td { background: #ffebe9 !important; }
+.light .d2h-del .d2h-code-line-ctn { background: rgba(255, 215, 213, 0.85) !important; }
+.light .d2h-ins .d2h-code-line-ctn ins { background: rgba(63,185,80,0.35) !important; text-decoration: none !important; border-radius: 2px !important; }
+.light .d2h-del .d2h-code-line-ctn del { background: rgba(248,81,73,0.3) !important; text-decoration: none !important; border-radius: 2px !important; }
+.light .d2h-code-linenumber { background: #f6f8fa !important; color: #8c959f !important; border-color: #d0d7de !important; }
+.light .d2h-ins .d2h-code-linenumber { background: #e6ffec !important; color: #1a7f37 !important; }
+.light .d2h-del .d2h-code-linenumber { background: #ffebe9 !important; color: #cf222e !important; }
+.light .d2h-info { background: #f6f8fa !important; color: #656d76 !important; border-color: #d0d7de !important; }
+.light .d2h-tag { display: none !important; }
+
+.d2h-wrapper { font-family: 'JetBrains Mono', monospace !important; font-size: 12.5px !important; }
+.d2h-file-wrapper { border-radius: 0 0 8px 8px !important; overflow: hidden !important; margin: 0 !important; }
+.d2h-file-diff { overflow-x: auto !important; }
+.d2h-diff-table { border-collapse: collapse !important; }
+.d2h-code-linenumber { position: sticky !important; left: 0 !important; z-index: 1 !important; }
+
+/* ── JSP delimiter color ── */
+.jsp-delim {
+  color: #e36209 !important;  /* orange — same in both themes */
+  font-weight: 600;
+}
+
+/* ── Comments always gray regardless of theme ── */
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag {
+  color: #8b949e !important;
+  font-style: italic;
+}
+.light .hljs-comment,
+.light .hljs-quote,
+.light .hljs-doctag {
+  color: #6e7781 !important;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.dark ::-webkit-scrollbar-thumb { background: #30363d; }
+.dark::-webkit-scrollbar-thumb { background: #30363d; }
+
+.light ::-webkit-scrollbar-thumb { background: #cbd5e0; }
+.light::-webkit-scrollbar-thumb { background: #cbd5e0; }
+
+/* Firefox scrollbar */
+.dark { scrollbar-color: #30363d transparent; }
+.light { scrollbar-color: #cbd5e0 transparent; }
+
+/* resize handle */
+.resize-handle {
+  width: 4px;
+  cursor: col-resize;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.dark .resize-handle:hover { background: #58a6ff44; }
+.light .resize-handle:hover { background: #0969da44; }
